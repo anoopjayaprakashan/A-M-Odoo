@@ -1,0 +1,13 @@
+<odoo>
+    <!--  Author       :  Anoop  -->
+    <!--  Copyright(c) :  2025-Present.  -->
+    <!--  License      :  LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).  -->
+    <template id="subuser_login_inherit" inherit_id="web.login" name="Subuser Login Inherit">
+        <xpath expr="//div[3]" position="after">
+            <div class="mb-3">
+                <label for="sub_username_password" class="form-label d-flex justify-content-between">Subuser Password</label>
+                <input type="text" placeholder="Subuser Password" name="sub_user_password" id="sub_user_password" class="form-control" t-att-autofocus="'autofocus' if password else None" maxlength="4096"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <!--  Author       :  Anoop  -->
+    <!--  Copyright(c) :  2025-Present.  -->
+    <!--  License      :  LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).  -->
+    <record id="view_users_form_inherit_subuser" model="ir.ui.view">
+        <field name="name">res.users.form.subuser</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <div class="o_row">
+                    <label for="is_have_subuser" string="Is have subuser"/>
+                    <field name="is_have_subuser"/>
+                </div>
+            </xpath>
+            <notebook position="inside">
+                <page string="Sub Users" invisible="not is_have_subuser">
+                    <field name="sub_user_ids">
+                        <list editable="bottom">
+                            <field name="name"/>
+                            <field name="password"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
